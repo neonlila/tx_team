@@ -1,0 +1,32 @@
+{
+    "name": "neon/site-team",
+    "type": "typo3-cms-extension",
+    "description": "Manage your team member",
+    "homepage": "https://docs.typo3.org/permalink/t3sitepackage:start",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Kristina Wiemann",
+            "role": "Developer",
+            "email": "",
+            "homepage": ""
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^14.1",
+        "typo3/cms-rte-ckeditor": "^14.1",
+        "typo3/cms-fluid-styled-content": "^14.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Neon\\SiteTeam\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "site_team"
+        }
+    }
+}
