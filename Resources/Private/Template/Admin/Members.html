@@ -1,0 +1,63 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Backend" />
+
+<f:section name="content">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Team Members List</h3>
+        <a href="{newMemberUrl}" class="btn btn-success">
+            + Add New Member
+        </a>
+    </div>
+
+    <div class="table-fit">
+        <table class="table table-striped table-hover align-middle">
+            <thead>
+                <tr>
+                    <th style="width: 50px;">Photo</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Department</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <f:for each="{members}" as="member">
+                    <tr>
+                        <td>
+                            <f:if condition="{member.photo}">
+                                <f:then>
+                                    <f:image image="{member.photo}" width="40c" height="40c" class="rounded-circle" />
+                                </f:then>
+                                <f:else>
+                                    <span class="avatar avatar-sm rounded-circle bg-secondary text-white d-inline-flex align-items-center justify-content-center">
+                                        {member.name -> f:format.crop(maxCharacters: 1, append: '')}
+                                    </span>
+                                </f:else>
+                            </f:if>
+                        </td>
+                        <td><strong>{member.name}</strong></td>
+                        <td>{member.position}</td>
+                        <td>
+                            <f:if condition="{member.department}">
+                                <span class="badge bg-info">{member.department.title}</span>
+                            </f:if>
+                        </td>
+                        <td class="text-end">
+                            <be:link.editRecord table="tx_team_domain_model_member" uid="{member.uid}" class="btn btn-default btn-sm" title="Edit in FormEngine">
+                                Edit
+                            </be:link.editRecord>
+                            
+                            <f:link.action action="deleteMember" arguments="{memberUid: member.uid}" class="btn btn-danger btn-sm" onclick="return confirm('Delete member {member.name}?');">
+                                Delete
+                            </f:link.action>
+                        </td>
+                    </tr>
+                </f:for>
+            </tbody>
+        </table>
+    </div>
+</f:section>
+</html>

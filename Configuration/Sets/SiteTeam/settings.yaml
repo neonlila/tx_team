@@ -1,12 +1,12 @@
 styles:
   templates:
-    layoutRootPath: 'EXT:site_team/Resources/Private/ContentElements/Layouts/'
-    partialRootPath: 'EXT:site_team/Resources/Private/ContentElements/Partials/'
-    templateRootPath: 'EXT:site_team/Resources/Private/ContentElements/Templates/'
+    layoutRootPath: 'EXT:tx_team/Resources/Private/ContentElements/Layouts/'
+    partialRootPath: 'EXT:tx_team/Resources/Private/ContentElements/Partials/'
+    templateRootPath: 'EXT:tx_team/Resources/Private/ContentElements/Templates/'
 
 page:
   pageview:
-    paths: 'EXT:site_team/Resources/Private/PageView/'
+    paths: 'EXT:tx_team/Resources/Private/PageView/'
 
   meta:
     viewport: 'width=device-width, initial-scale=1'

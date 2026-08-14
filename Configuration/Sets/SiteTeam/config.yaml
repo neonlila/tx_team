@@ -1,5 +1,5 @@
 # .. name is how you install it with composer | composer req tutorial/site-agency
-name: 'neon/site-team'
+name: 'neon/tx-team'
 label: 'Team Member'
 # ... define your dependencies
 dependencies:

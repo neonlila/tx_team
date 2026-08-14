@@ -1,0 +1,16 @@
+<?php
+
+mod.wizards.newContentElement.wizardItems.plugins {
+    elements {
+        tx_team_directory {
+            iconIdentifier = content-plugin
+            title = Team Directory
+            description = Displays a filterable grid of team members with modal details.
+            tt_content_defValues {
+                CType = list
+                list_type = txteam_directory
+            }
+        }
+    }
+    show := addToList(tx_team_directory)
+}

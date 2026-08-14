@@ -1,19 +1,25 @@
 <?php
 
-use Neon\SiteTeam\Controller\TeamController;
+declare(strict_types=1);
+
+use Neon\TxTeam\Controller\AdminController;
 
 return [
-    'site_team_team' => [
+    'web_txteam' => [
         'parent' => 'web',
-        'position' => ['after' => '*'],
-        'access' => 'user',
-        'path' => '/module/web/site-team-team',
-        'iconIdentifier' => 'site-team-team-module',
-        'labels' => 'site_team.modules.team',
-        'extensionName' => 'SiteTeam',
+        'position' => ['after' => 'web_list'],
+        'access' => 'user,group',
+        'iconIdentifier' => 'module-team',
+        'path' => '/module/web/txteam',
+        'labels' => 'LLL:EXT:tx_team/Resources/Private/Language/locallang_mod.xlf',
+        'extensionName' => 'TxTeam',
         'controllerActions' => [
-            TeamController::class => [
-                'index', 'show', 'new', 'create', 'edit', 'update', 'delete',
+            AdminController::class => [
+                'index',
+                'members',
+                'departments',
+                'deleteMember',
+                'deleteDepartment',
             ],
         ],
     ],

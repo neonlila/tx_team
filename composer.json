@@ -1,5 +1,5 @@
 {
-    "name": "neon/site-team",
+    "name": "neon/tx-team",
     "type": "typo3-cms-extension",
     "description": "Manage your team member",
     "homepage": "https://docs.typo3.org/permalink/t3sitepackage:start",
@@ -21,12 +21,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Neon\\SiteTeam\\": "Classes/"
+            "Neon\\TxTeam\\": "Classes/"
         }
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "site_team"
+            "extension-key": "tx_team"
         }
     }
 }

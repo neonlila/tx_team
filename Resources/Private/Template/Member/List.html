@@ -1,0 +1,85 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="tx-team-wrapper">
+    <!-- Department Filter Bar -->
+    <nav class="team-filter-nav mb-4" aria-label="Department Filter">
+        <ul class="nav nav-pills gap-2">
+            <li class="nav-item">
+                <f:link.action action="list" class="nav-link {f:if(condition: '{currentDepartment} == 0', then: 'active')}" pageUid="{currentPageUid}">
+                    All Departments
+                </f:link.action>
+            </li>
+            <f:for each="{departments}" as="dept">
+                <li class="nav-item">
+                    <f:link.action action="list" arguments="{department: dept.uid}" class="nav-link {f:if(condition: '{currentDepartment} == {dept.uid}', then: 'active')}" pageUid="{currentPageUid}">
+                        {dept.title}
+                    </f:link.action>
+                </li>
+            </f:for>
+        </ul>
+    </nav>
+
+    <!-- Team Members Grid -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <f:for each="{members}" as="member">
+            <div class="col">
+                <div class="card h-100 shadow-sm cursor-pointer" data-bs-toggle="modal" data-bs-target="#teamModal-{member.uid}">
+                    <f:if condition="{member.photo}">
+                        <f:then>
+                            <f:image image="{member.photo}" cropVariant="default" width="400c" height="400c" class="card-img-top img-fluid" alt="{member.name}" />
+                        </f:then>
+                        <f:else>
+                            <img src="https://via.placeholder.com/400x400?text=No+Photo" class="card-img-top img-fluid" alt="{member.name}" />
+                        </f:else>
+                    </f:if>
+
+                    <div class="card-body">
+                        <h5 class="card-title mb-1">{member.name}</h5>
+                        <p class="card-text text-muted mb-2">{member.position}</p>
+                        <f:if condition="{member.department}">
+                            <span class="badge bg-secondary">{member.department.title}</span>
+                        </f:if>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detail Modal -->
+            <div class="modal fade" id="teamModal-{member.uid}" tabindex="-1" aria-labelledby="modalLabel-{member.uid}" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel-{member.uid}">{member.name}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text-center mb-3">
+                                <f:if condition="{member.photo}">
+                                    <f:image image="{member.photo}" cropVariant="default" width="200c" height="200c" class="rounded-circle img-thumbnail" alt="{member.name}" />
+                                </f:if>
+                            </div>
+                            <p class="text-center text-muted fw-bold mb-1">{member.position}</p>
+                            <f:if condition="{member.department}">
+                                <p class="text-center"><span class="badge bg-primary">{member.department.title}</span></p>
+                            </f:if>
+                            
+                            <hr />
+
+                            <div class="bio-text">
+                                <f:format.html>{member.bio}</f:format.html>
+                            </div>
+
+                            <f:if condition="{member.linkedin}">
+                                <div class="mt-3 text-end">
+                                    <f:link.typolink parameter="{member.linkedin}" target="_blank" class="btn btn-outline-primary btn-sm">
+                                        LinkedIn Profile
+                                    </f:link.typolink>
+                                </div>
+                            </f:if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:for>
+    </div>
+</div>
+</html>

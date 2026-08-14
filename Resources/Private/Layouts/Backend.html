@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="module-body t3js-module-body">
+    <!-- BE Action Bar -->
+    <div class="mb-4">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <f:link.action action="index" class="nav-link {f:if(condition: '{controllerAction} == \"index\"', then: 'active')}">
+                    Dashboard
+                </f:link.action>
+            </li>
+            <li class="nav-item">
+                <f:link.action action="members" class="nav-link {f:if(condition: '{controllerAction} == \"members\"', then: 'active')}">
+                    Members ({memberCount})
+                </f:link.action>
+            </li>
+            <li class="nav-item">
+                <f:link.action action="departments" class="nav-link {f:if(condition: '{controllerAction} == \"departments\"', then: 'active')}">
+                    Departments ({departmentCount})
+                </f:link.action>
+            </li>
+        </ul>
+    </div>
+
+    <f:flashMessages />
+
+    <f:render section="content" />
+</div>
+</html>

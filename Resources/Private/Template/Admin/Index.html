@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Backend" />
+
+<f:section name="content">
+    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+        <div class="col">
+            <div class="card bg-light">
+                <div class="card-body text-center">
+                    <h2 class="card-title display-6">{memberCount}</h2>
+                    <p class="card-text text-muted">Total Team Members</p>
+                    <f:link.action action="members" class="btn btn-primary btn-sm">Manage Members</f:link.action>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card bg-light">
+                <div class="card-body text-center">
+                    <h2 class="card-title display-6">{departmentCount}</h2>
+                    <p class="card-text text-muted">Active Departments</p>
+                    <f:link.action action="departments" class="btn btn-primary btn-sm">Manage Departments</f:link.action>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>
+</html>

@@ -1,9 +1,9 @@
-plugin.tx_team_teamlist {
+plugin.tx_team {
     view {
-        templateRootPaths.10 = EXT:site_team/Resources/Private/Templates/
+        templateRootPaths.10 = EXT:tx_team/Resources/Private/Templates/
     }
     persistence {
-        storagePid = {$plugin.tx_team_teamlist.persistence.storagePid}
+        storagePid = {$plugin.tx_team.persistence.storagePid}
     }
     settings {
         itemsPerPage = 10
