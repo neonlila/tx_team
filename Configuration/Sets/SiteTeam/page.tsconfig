@@ -1,16 +1,14 @@
-<?php
-
 mod.wizards.newContentElement.wizardItems.plugins {
     elements {
-        tx_team_directory {
+        txteam_teamlist {
             iconIdentifier = content-plugin
-            title = Team Directory
-            description = Displays a filterable grid of team members with modal details.
+            title = Team List
+            description = Displays team members with filter options
             tt_content_defValues {
                 CType = list
-                list_type = txteam_directory
+                list_type = txteam_teamlist
             }
         }
     }
-    show := addToList(tx_team_directory)
+    show := addToList(txteam_teamlist)
 }

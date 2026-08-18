@@ -1,13 +1,19 @@
 <?php
 
-use Neon\SiteTeam\Controller\TeamController;
+declare(strict_types=1);
+
+use Neon\TxTeam\Controller\MemberController;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') or die();
 
 ExtensionUtility::configurePlugin(
-    'SiteTam',
+    'TxTeam',
     'TeamList',
-    [TeamController::class => 'list, show, create'],
-    [TeamController::class => 'create'],
+    [
+        MemberController::class => ['list', 'show', 'create'],
+    ],
+    [
+        MemberController::class => ['create'],
+    ]
 );

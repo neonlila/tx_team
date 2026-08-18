@@ -1,6 +1,14 @@
 plugin.tx_team {
     view {
-        templateRootPaths.10 = EXT:tx_team/Resources/Private/Templates/
+        templateRootPaths {
+            10 = EXT:tx_team/Resources/Private/Templates/
+        }
+        partialRootPaths {
+            10 = EXT:tx_team/Resources/Private/Partials/
+        }
+        layoutRootPaths {
+            10 = EXT:tx_team/Resources/Private/Layouts/
+        }
     }
     persistence {
         storagePid = {$plugin.tx_team.persistence.storagePid}
@@ -8,4 +16,12 @@ plugin.tx_team {
     settings {
         itemsPerPage = 10
     }
+}
+
+tt_content.list.20.txteam_teamlist = USER
+tt_content.list.20.txteam_teamlist {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = TxTeam
+    pluginName = TeamList
+    vendorName = Neon
 }
