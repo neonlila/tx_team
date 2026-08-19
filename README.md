@@ -45,6 +45,8 @@ Ensure your extension includes ext_tables.sql in the root directory to define th
 #
 CREATE TABLE tx_team_domain_model_member (
     name varchar(255) DEFAULT '' NOT NULL,
+    phone varchar(255) DEFAULT '' NOT NULL,
+    email varchar(255) DEFAULT '' NOT NULL,
     position varchar(255) DEFAULT '' NOT NULL,
     bio text DEFAULT '' NOT NULL,
     linkedin varchar(255) DEFAULT '' NOT NULL,
