@@ -10,7 +10,8 @@ A lightweight, modern TYPO3 Extbase extension for managing and displaying team m
 
 ## 📸 Frontend Preview
 
-![Team Directory Preview](Resources/Public/Images/tx_team_frontend.png)
+![Team Directory Preview](  <img src="https://raw.githubusercontent.com/neonlila/tx_team/master/Resources/Public/images/tx_team_frontend.png" alt="Frontend Team Modul" width="100%" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+)
 
 ---
 
@@ -196,6 +197,6 @@ This extension is open-source software licensed under the GPL-2.0-or-later.
 
 TODO: 
 
-[ ] add a variaty of layouts to showcase the team members
-[ ] add some new fields to member
-[ ] add icons/colors to department
+- [ ] add a variaty of layouts to showcase the team members
+- [ ] add some new fields to member
+- [ ] add icons/colors to department
