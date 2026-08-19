@@ -14,7 +14,7 @@ plugin.tx_team {
         storagePid = {$plugin.tx_team.persistence.storagePid}
     }
     settings {
-        itemsPerPage = 10
+        itemsPerPage = 8
     }
 }
 

@@ -10,20 +10,27 @@ use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 class Member extends AbstractEntity
 {
     protected string $name = '';
+    protected string $phone = '';
+    protected string $email = '';
     protected string $position = '';
     protected string $bio = '';
     protected string $linkedin = '';
-    protected ?FileReference $photo = null;
     protected ?Department $department = null;
+    protected ?FileReference $photo = null;
 
     public function getName(): string
     {
         return $this->name;
     }
 
-    public function setName(string $name): void
+    public function getPhone(): string
     {
-        $this->name = $name;
+        return $this->phone;
+    }
+
+    public function getEmail(): string
+    {
+        return $this->email;
     }
 
     public function getPosition(): string
@@ -31,19 +38,9 @@ class Member extends AbstractEntity
         return $this->position;
     }
 
-    public function setPosition(string $position): void
-    {
-        $this->position = $position;
-    }
-
     public function getBio(): string
     {
         return $this->bio;
-    }
-
-    public function setBio(string $bio): void
-    {
-        $this->bio = $bio;
     }
 
     public function getLinkedin(): string
@@ -51,28 +48,13 @@ class Member extends AbstractEntity
         return $this->linkedin;
     }
 
-    public function setLinkedin(string $linkedin): void
-    {
-        $this->linkedin = $linkedin;
-    }
-
-    public function getPhoto(): ?FileReference
-    {
-        return $this->photo;
-    }
-
-    public function setPhoto(?FileReference $photo): void
-    {
-        $this->photo = $photo;
-    }
-
     public function getDepartment(): ?Department
     {
         return $this->department;
     }
 
-    public function setDepartment(?Department $department): void
+    public function getPhoto(): ?FileReference
     {
-        $this->department = $department;
+        return $this->photo;
     }
 }

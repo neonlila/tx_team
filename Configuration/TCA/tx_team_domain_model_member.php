@@ -23,7 +23,7 @@ return [
     'types' => [
         '0' => [
             'showitem' => '
-                --div--;General, hidden, name, position, department, linkedin, photo,
+                --div--;General, hidden, name, phone, email, position, department, linkedin, photo,
                 --div--;Biography, bio
             ',
         ],
@@ -51,6 +51,26 @@ return [
                 'size' => 30,
                 'eval' => 'trim',
                 'required' => true,
+            ],
+        ],
+        'phone' => [
+            'exclude' => false,
+            'label' => 'Phone number',
+            'config' => [
+                'type' => 'input',
+                'size' => 35,
+                'eval' => 'trim',
+                'required' => false,
+            ],
+        ],
+        'email' => [
+            'exclude' => false,
+            'label' => 'Email address',
+            'config' => [
+                'type' => 'input',
+                'size' => 40,
+                'eval' => 'trim',
+                'required' => false,
             ],
         ],
         'position' => [
